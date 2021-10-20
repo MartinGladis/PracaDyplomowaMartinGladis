@@ -22,11 +22,6 @@ class Categories
      */
     private $name;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Product::class, inversedBy="category")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $product;
 
     public function getId(): ?int
     {
@@ -41,18 +36,6 @@ class Categories
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getProduct(): ?Product
-    {
-        return $this->product;
-    }
-
-    public function setProduct(?Product $product): self
-    {
-        $this->product = $product;
 
         return $this;
     }
