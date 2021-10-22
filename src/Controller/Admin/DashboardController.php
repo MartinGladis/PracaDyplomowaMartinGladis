@@ -26,14 +26,14 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('PracaDyplomowaMartinGladis');
+            ->setTitle('Webshop');
     }
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoDashboard('Back to Home', 'fa fa-home', 'homepage');
-        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
-        yield MenuItem::linkToRoute('Category', 'fas fa-map-maker-alt', Category::class);
-        yield MenuItem::linkToRoute('Product', 'fas fa-map-maker-alt', Product::class);
+        yield MenuItem::linkToRoute('Back to Home', 'fas fa-home', 'homepage');
+        yield MenuItem::section('Entieties');
+        yield MenuItem::linkToCrud('Categories', 'fa fa-list', Category::class);
+        yield MenuItem::linkToCrud('Products', 'fab fa-product-hunt', Product::class);
     }
 }
