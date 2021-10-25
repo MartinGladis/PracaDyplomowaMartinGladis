@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kategorie{% endblock %}
+
+{% block body %}
+    {% if products|length > 0 %}
+        <h2>{{ category }}</h2>
+        <table>
+            {% for product in products %}
+            <tr>
+                <td>
+                    {{ product.name }}
+                </td>
+                <td>
+                    {{ product.price }} zł
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        Brak produków w danej kategorii
+    {% endif %}
+{% endblock %}
