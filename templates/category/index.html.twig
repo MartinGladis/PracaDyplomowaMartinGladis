@@ -3,10 +3,13 @@
 {% block title %}Kategorie{% endblock %}
 
 {% block body %}
-    <h2>Kategorie</h2>
-    <ul>
+    <table>
+    <tr><th>Kategorie</th></tr>
     {% for category in categories %}
-        <li><a href="/category/{{ category.id }}">{{ category }}</a></li>
+        {# <li><a href="/category/{{ category.id }}">{{ category }}</a></li> #}
+        <tr>
+            <td><a href="{{ path('productsByCategory', { id: category.id }) }}">{{ category }}</a></td>
+        <tr>
     {% endfor %}
-    </ul>
+    </table>
 {% endblock %}

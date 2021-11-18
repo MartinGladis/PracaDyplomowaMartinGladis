@@ -14,25 +14,8 @@ class HomepageController extends AbstractController
      */
     public function index(Request $request): Response
     {
-        // return $this->render('homepage/index.html.twig', [
-        //     'controller_name' => 'HomepageController',
-        // ]);
-
-        $greet = '';
-        if ($name = $request->query->get('name'))
-        {
-            $greet = sprintf("Hello %s", htmlspecialchars($name));
-        }
-
-        return new Response(
-            <<<EOF
-            <html>
-                <body>
-                    <h1>$greet</h1>
-                    <img src="images/under-construction.gif" alt="Test Page" />
-                </body>
-            </html>
-            EOF
-        );
+        return $this->render('homepage/index.html.twig', [
+            'controller_name' => 'HomepageController',
+        ]);
     }
 }

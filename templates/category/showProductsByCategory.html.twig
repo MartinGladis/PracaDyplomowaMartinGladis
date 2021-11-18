@@ -2,10 +2,21 @@
 
 {% block title %}Kategorie{% endblock %}
 
+{% block stylesheets %}
+    <link href="../css/app.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="../js/webgazer.js" type="text/javascript"></script>
+    <script src="../js/app.js" type="text/javascript"></script>
+{% endblock %}
+
 {% block body %}
     {% if products|length > 0 %}
-        <h2>{{ category }}</h2>
         <table>
+            <tr>
+                <th>{{ category }}</th>
+            </tr>
             {% for product in products %}
             <tr>
                 <td>
