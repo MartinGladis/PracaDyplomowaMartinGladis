@@ -1,30 +1,66 @@
+{% set current_path = app.request.get('_route') %}
+
 <!DOCTYPE html>
-<html>
+<html lang="pl">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale-1">
         <title>{% block title %}Welcome!{% endblock %}</title>
 
         {% block stylesheets %}
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant+Garamond">
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+            <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet"  type="text/css">
             <link href="{{ asset('assets/css/app.css') }}" rel="stylesheet" type="text/css">
         {% endblock %}
 
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-dark bg-secondary text-white">
-                <div class="container-xxl" height="50">
-
+            <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+                <div class="container-fluid">
+                    <a href="{{ path('homepage') }}" class="navbar-brand">
+                        <img src="{{ asset('images/logo.svg') }}" alt="Sklep Internetowy">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu" aria-controls="mainmenu" aria-expended="false">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mainmenu">
+                        <ul class="navbar-nav m-auto">
+                            <li class="nav-item">
+                                <a href="{{ path('homepage') }}" class="nav-link {{ current_path == 'homepage' ? 'active' }}">Strona Głowna</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ path('category') }}" class="nav-link {{ current_path == 'category' ? 'active' }}">Kategorie</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ path('calibration') }}" class="nav-link {{ current_path == 'calibration' ? 'active' }}">Kalibracja</a>
+                            </li>
+                        </ul>
+                        <div class="d-inline me-4 videoContainerSwitcher">
+                            <input type="checkbox" id="videoContainerSwitch">
+                            <label for="videoContainerSwitch">Pokaż podgląd kamery</label>
+                        </div>
+                        <form class="row g-2 align-items-center" method="post">
+                            <div class="col-auto">
+                                <input class="form-control" type="search" name="search" placeholder="Szukaj" aria-label="Szukaj">
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </nav>
-
         </header>
-        {% block section %}{% endblock %}
+        {% block body_content %}{% endblock %}
+        <div id="closeWebgazerVideoContainer">
+            {# <button type="button">
+                <i class="bi bi-x-lg"></i>
+            </button> #}
+        </div>
         {% block javascripts %}
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+            <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
             <script src="{{ asset('assets/js/webgazer.js') }}" type="text/javascript"></script>
             <script src="{{ asset('assets/js/app.js') }}" type="text/javascript"></script>
         {% endblock %}
