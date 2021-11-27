@@ -13,3 +13,4 @@
 /phpunit.xml
 /.vscode
 node_modules
+/.serenata

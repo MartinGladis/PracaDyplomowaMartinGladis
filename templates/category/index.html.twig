@@ -2,14 +2,22 @@
 
 {% block title %}Kategorie{% endblock %}
 
-{% block body %}
-    <table>
-    <tr><th>Kategorie</th></tr>
-    {% for category in categories %}
-        {# <li><a href="/category/{{ category.id }}">{{ category }}</a></li> #}
-        <tr>
-            <td><a href="{{ path('productsByCategory', { id: category.id }) }}">{{ category }}</a></td>
-        <tr>
-    {% endfor %}
-    </table>
+{% block main %}
+    <div class="container">
+        <header class="mb-4">
+            <h1 class="h2 text-center">Kategorie</h1>
+        </header>
+        <div class="row">
+        {% for category in categories %}
+            <div class="col-3 mb-4">
+                <div class="p-2 category">
+                    <div class="category-image">
+                        <img src="{{ asset('/images/uploads/categories/' ~ category.image) }}" alt="{{ category.name }}">
+                    </div>
+                    <span>{{ category.name }}</span>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
 {% endblock %}

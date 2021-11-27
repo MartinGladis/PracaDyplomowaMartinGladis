@@ -20,15 +20,4 @@ class CategoryController extends AbstractController
             'categories' => $categoryRepository->findAll(),
         ]);
     }
-
-    /**
-     * @Route("/category/{id}", name="productsByCategory")
-     */
-    public function showProductsByCategory(Category $category, ProductRepository $productRepository): Response
-    {
-        return $this->render('category/showProductsByCategory.html.twig', [
-            'products' => $productRepository->findBy(['category' => $category]),
-            'category' => $category,
-        ]);
-    }
 }

@@ -19,7 +19,7 @@ class DashboardController extends AbstractDashboardController
     public function index(): Response
     {
         $routerBuilder = $this->get(AdminUrlGenerator::class);
-        $url = $routerBuilder->setController(CategoryCrudController::class)->generateUrl();
+        $url = $routerBuilder->setController(ProductCrudController::class)->generateUrl();
         return $this->redirect($url);
     }
 
@@ -31,9 +31,9 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToRoute('Back to Home', 'fas fa-home', 'homepage');
-        yield MenuItem::section('Entieties');
-        yield MenuItem::linkToCrud('Categories', 'fa fa-list', Category::class);
-        yield MenuItem::linkToCrud('Products', 'fab fa-product-hunt', Product::class);
+        yield MenuItem::linkToRoute('Powrót do Strony Głównej', 'fas fa-home', 'homepage');
+        yield MenuItem::section('Encje');
+        yield MenuItem::linkToCrud('Kategorie', 'fa fa-list', Category::class);
+        yield MenuItem::linkToCrud('Produkty', 'fab fa-product-hunt', Product::class);
     }
 }

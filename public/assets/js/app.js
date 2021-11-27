@@ -1,6 +1,6 @@
-function webgazerActions() {
+function webgazerActions(isChecked) {
     webgazer
-        .showVideo(false)
+        .showVideo(isChecked)
         .pause()
         .begin();
 }
@@ -11,8 +11,9 @@ if (!webgazer.detectCompatibility())
     alert("Twoja przeglądarka nie wspiera ruchów gałek ocznych");
 }
 else {
-    webgazerActions();
     var checkbox = document.getElementById('videoContainerSwitch');
+    var isChecked = checkbox.checked;
+    webgazerActions(isChecked);
 
     checkbox.addEventListener('change', function() {
         if (this.checked) {

@@ -2,11 +2,23 @@
 
 {% block title %}Strona Główna{% endblock %}
 
-{% block body %}
-
-
-
-{# <input type="checkbox" id="camHidden" checked="checked">
-<label>Hidden Camera</label> #}
-
+{% block main %}
+    <div class="container">
+        <header class="mb-4">
+            <h1 class="h2 text-center">Ostatnio dodane produkty</h1>
+        </header>
+        <div class="row">
+        {% for product in products %}
+            <div class="col-3 mb-4">
+                <div class="p-2 product">
+                    <div class="product-image">
+                        <img src="{{ asset('/images/uploads/products/' ~ product.image) }}" alt="podgląd produktu">
+                    </div>
+                    <p>{{ product.name }}</p>
+                    <p>{{ product.price }} zł</p>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
 {% endblock %}
