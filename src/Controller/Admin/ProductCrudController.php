@@ -45,7 +45,6 @@ class ProductCrudController extends AbstractCrudController
         yield NumberField::new('price', 'Cena');
         yield AssociationField::new('category', 'Kategoria');
         yield TextEditorField::new('description', 'Opis');
-        yield DateTimeField::new('createAt', 'Utworzone')->hideOnForm();
         yield ImageField::new('image', 'Zdjęcie')
             ->setBasePath('/images/uploads/products')
             ->setUploadDir('public/images/uploads/products')

@@ -5,7 +5,6 @@ function webgazerActions(isChecked) {
         .begin();
 }
 
-
 if (!webgazer.detectCompatibility())
 {
     alert("Twoja przeglądarka nie wspiera ruchów gałek ocznych");

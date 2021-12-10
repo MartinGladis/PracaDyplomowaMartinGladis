@@ -3,7 +3,7 @@
 {% block title %}Strona Główna{% endblock %}
 
 {% block main %}
-    <div class="container">
+    <div class="container mb-5">
         <header class="mb-4">
             <h1 class="h2 text-center">Ostatnio dodane produkty</h1>
         </header>
@@ -11,11 +11,13 @@
         {% for product in products %}
             <div class="col-3 mb-4">
                 <div class="p-2 product">
-                    <div class="product-image">
-                        <img src="{{ asset('/images/uploads/products/' ~ product.image) }}" alt="podgląd produktu">
-                    </div>
-                    <p>{{ product.name }}</p>
-                    <p>{{ product.price }} zł</p>
+                    <a href="{{ path('product', {slug: product.slug}) }}">
+                        <div class="product-image">
+                            <img src="{{ asset('/images/uploads/products/' ~ product.image) }}" alt="{{product.name}}">
+                        </div>
+                        <p class="name">{{ product.name }}</p>
+                        <p class="price">{{ product.price }} zł</p>
+                    </a>
                 </div>
             </div>
         {% endfor %}
