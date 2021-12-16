@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Strona Główna{% endblock %}
+
+{% block main %}
+    <div class="container mb-5">
+        <header class="mb-4">
+            <h1 class="h2 text-center">{{category}}</h1>
+        </header>
+        <div class="row">
+        {% for product in products %}
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-4">
+                <a href="{{ path('product', {slug: product.slug}) }}" class="text-decoration-none text-dark">
+                    <div class="p-2 product">
+                        <div class="product-image">
+                            <img src="{{ asset('/images/uploads/products/' ~ product.image) }}" alt="{{ product.name }}">
+                        </div>
+                        <p class="name m-0">{{ product.name }}</p>
+                        <p class="price m-0">{{ product.price }} zł</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}
