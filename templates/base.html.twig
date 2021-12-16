@@ -29,7 +29,7 @@
                                 <a href="{{ path('homepage') }}" class="nav-link {{ currentPath == 'homepage' ? 'active' }}">Strona Głowna</a>
                             </li>
                             <li class="nav-item my-1">
-                                <a href="{{ path('category') }}" class="nav-link {{ currentPath == 'category' ? 'active' }}">Kategorie</a>
+                                <a href="{{ path('category') }}" class="nav-link {{ currentPath == 'category' or currentPath == 'products-by-category' ? 'active' }}">Kategorie</a>
                             </li>
                             <li class="nav-item my-1">
                                 <a href="{{ path('calibration') }}" class="nav-link {{ currentPath == 'calibration' ? 'active' }}">Kalibracja</a>
