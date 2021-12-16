@@ -9,16 +9,16 @@
         </header>
         <div class="row">
         {% for product in products %}
-            <div class="col-3 mb-4">
-                <div class="p-2 product">
-                    <a href="{{ path('product', {slug: product.slug}) }}">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-4">
+                <a href="{{ path('product', {slug: product.slug}) }}" class="text-decoration-none text-dark">
+                    <div class="p-2 product">
                         <div class="product-image">
                             <img src="{{ asset('/images/uploads/products/' ~ product.image) }}" alt="{{product.name}}">
                         </div>
-                        <p class="name">{{ product.name }}</p>
-                        <p class="price">{{ product.price }} zł</p>
-                    </a>
-                </div>
+                        <p class="name m-0">{{ product.name }}</p>
+                        <p class="price m-0">{{ product.price }} zł</p>
+                    </div>
+                </a>
             </div>
         {% endfor %}
         </div>

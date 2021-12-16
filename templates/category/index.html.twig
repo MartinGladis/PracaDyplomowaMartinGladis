@@ -9,7 +9,7 @@
         </header>
         <div class="row">
         {% for category in categories %}
-            <div class="col-3 mb-4">
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-4">
                 <div class="p-2 category">
                     <div class="category-image">
                         <img src="{{ asset('/images/uploads/categories/' ~ category.image) }}" alt="{{ category.name }}">

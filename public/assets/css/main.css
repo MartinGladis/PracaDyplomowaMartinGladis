@@ -8,8 +8,8 @@ body {
 body > header,
 body > footer {
     color: whitesmoke;
-    font-size: 23px;
 }
+
 
 .navbar img{
     width: 64px;
@@ -40,15 +40,6 @@ div.category-image img {
     max-width: 100%;
     max-height: 100%;
 }
-
-div.product p {
-    margin: 0;
-}
-div.product a {
-    text-decoration: none;
-    color: inherit;
-}
-
 
 div.product div.product-image,
 div.category div.category-image {

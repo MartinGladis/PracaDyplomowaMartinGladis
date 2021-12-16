@@ -14,8 +14,8 @@
 
     </head>
     <body class="d-flex flex-column min-vh-100">
-        <header>
-            <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+        <header class="fs-4">
+            <nav class="navbar navbar-dark bg-primary navbar-expand-xl">
                 <div class="container-fluid">
                     <a href="{{ path('homepage') }}" class="navbar-brand">
                         <img src="{{ asset('images/logo.svg') }}" alt="Sklep Internetowy">
@@ -25,21 +25,21 @@
                     </button>
                     <div class="collapse navbar-collapse" id="mainmenu">
                         <ul class="navbar-nav me-auto">
-                            <li class="nav-item">
+                            <li class="nav-item my-1">
                                 <a href="{{ path('homepage') }}" class="nav-link {{ currentPath == 'homepage' ? 'active' }}">Strona Głowna</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item my-1">
                                 <a href="{{ path('category') }}" class="nav-link {{ currentPath == 'category' ? 'active' }}">Kategorie</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item my-1">
                                 <a href="{{ path('calibration') }}" class="nav-link {{ currentPath == 'calibration' ? 'active' }}">Kalibracja</a>
                             </li>
                         </ul>
-                        <div class="d-inline me-5 videoContainerSwitcher">
+                        <div class="d-inline-block me-5 videoContainerSwitcher my-2">
                             <input type="checkbox" id="videoContainerSwitch">
-                            <label for="videoContainerSwitch">Pokaż podgląd kamery</label>
+                            <label for="videoContainerSwitch">&nbsp;Pokaż podgląd kamery</label>
                         </div>
-                        <form class="row g-2 align-items-center" method="post">
+                        <form class="row g-2 align-items-center my-2" method="post">
                             <div class="col-auto">
                                 <input class="form-control" type="search" name="search" placeholder="Szukaj" aria-label="Szukaj">
                             </div>
@@ -58,7 +58,7 @@
         {# <img src="{{ asset('/images/under-construction.gif') }}" alt="Under Construction"> #}
     {% endblock %}
         </main>
-        <footer class="bg-primary text-white mt-auto py-2">
+        <footer class="bg-primary text-white mt-auto py-2 fs-4">
             <div class="text-center">
                 <span>&copy; {{ "now" | date("Y") }} Copyright: Martin Gladis</span>
             </div>
