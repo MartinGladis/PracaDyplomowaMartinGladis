@@ -28,6 +28,15 @@ class ProductRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function findByPartOfName(string $value)
+    {
+        return $this->createQueryBuilder('p')
+            ->where('lower(p.name) like lower(:value)')
+            ->setParameter('value', '%'.$value.'%')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Product[] Returns an array of Product objects
     //  */
