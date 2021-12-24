@@ -1,7 +1,8 @@
 function webgazerActions(isChecked) {
     webgazer
+        .saveDataAcrossSessions(false)
         .showVideo(isChecked)
-        .pause()
+        .removeMouseEventListeners()
         .begin();
 }
 

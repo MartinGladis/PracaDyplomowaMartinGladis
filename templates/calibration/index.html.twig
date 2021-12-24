@@ -1,7 +1,50 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CalibrationController!{% endblock %}
+{% block title %}Kalibracja{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('assets/css/calibration.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
 
 {% block main %}
+    <div class="row">
+        <div class="col-4 d-flex justify-content-start align-items-start">
+            <button type="button" class="calibration-button"></button>
+        </div>
+        <div class="col-4 d-flex justify-content-center align-items-start">
+            <button type="button" class="calibration-button"></button>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-start">
+            <button type="button" class="calibration-button"></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 d-flex justify-content-start align-items-center">
+            <button type="button" class="calibration-button"></button>
+        </div>
+        <div class="col-4 d-flex justify-content-center align-items-center">
+            <button type="button" class="calibration-button"></button>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+            <button type="button" class="calibration-button"></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 d-flex justify-content-start align-items-end">
+            <button type="button" class="calibration-button"></button>
+        </div>
+        <div class="col-4 d-flex justify-content-center align-items-end">
+            <button type="button" class="calibration-button"></button>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-end">
+            <button type="button" class="calibration-button"></button>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('assets/js/calibration.js') }}">
 
+    </script>
 {% endblock %}

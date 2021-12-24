@@ -61,12 +61,8 @@ div.product p.price {
     display: block;
 }
 
-footer {
-    margin-top: auto;
-}
-
 div#webgazerGazeDot {
-    width: 60px !important;
-    height: 60px !important;
+    width: 35px !important;
+    height: 35px !important;
     opacity: 0.35 !important;
 }
