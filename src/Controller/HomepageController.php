@@ -17,7 +17,7 @@ class HomepageController extends AbstractController
     public function index(ProductRepository $productRepository): Response
     {
         return $this->render('homepage/index.html.twig', [
-            'products' => $productRepository->findByTheNewestProduct(8),
+            'products' => $productRepository->findByTheNewestProduct(),
         ]);
     }
 }
