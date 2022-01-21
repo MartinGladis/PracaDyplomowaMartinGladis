@@ -1,3 +1,3 @@
 document.addEventListener("DOMContentLoaded", function(){
-    alert('Naciskaj na poniższe przyciski w celu kalibracji odczytu ruchek gałek ocznych (Nie zapomnij zezwolić na obraz z kamery)');
+    alert('Naciskaj na poniższe przyciski w celu kalibracji odczytu ruchek gałek ocznych (Nie zapomnij nadać uprawnień do kamery)');
 });
