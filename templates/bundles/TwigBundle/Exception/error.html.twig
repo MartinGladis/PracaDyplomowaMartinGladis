@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Coś poszło nie tak{% endblock %}
+
+{% block main %}
+    <div class="container mt-5">
+        <h1 class="h1 text-center" id="header">ERROR!!!</h1>
+        <br>
+        <div class="h4 text-center">
+            Coś poszło nie tak. <i class="bi bi-emoji-frown"></i><br>
+            Wróć do <a href="{{ path('homepage') }}">Strony Główej</a>
+        </div>
+    </div>
+{% endblock %}
