@@ -24,12 +24,13 @@ class CategoryController extends AbstractController
     /**
      * @Route("/category/{slug}", name="products-by-category")
      */
-     public function productsByCategory(string $slug = '', ProductRepository $productRepository, Category $category) : Response
-     {
+    public function productsByCategory(string $slug, CategoryRepository $categoryRepository): Response
+    {
+        $category = $categoryRepository->findOneBy(['slug' => $slug]);
 
-         return $this->render('category/products-by-category.html.twig', [
-             'products' => $productRepository->findBy(['category' => $category]),
-             'category' => $category,
-         ]);
-     }
+        return $this->render('category/products-by-category.html.twig', [
+            'products' => $category->getProducts(),
+            'category' => $category,
+        ]);
+    }
 }
