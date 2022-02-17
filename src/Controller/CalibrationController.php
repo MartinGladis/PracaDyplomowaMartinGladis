@@ -13,8 +13,6 @@ class CalibrationController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('calibration/index.html.twig', [
-            'controller_name' => 'CalibrationController',
-        ]);
+        return $this->render('calibration/index.html.twig');
     }
 }
