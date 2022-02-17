@@ -13,7 +13,7 @@ class ProductController extends AbstractController
     /**
      * @Route("/product/{slug}", name="product")
      */
-    public function index(string $slug = '', ProductRepository $productRepository): Response
+    public function index(string $slug, ProductRepository $productRepository): Response
     {
         $product = $productRepository->findOneBy(['slug' => $slug]);
         if (!$product) {
