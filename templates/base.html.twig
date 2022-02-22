@@ -25,13 +25,13 @@
                     </button>
                     <div class="collapse navbar-collapse" id="mainmenu">
                         <ul class="navbar-nav me-auto">
-                            <li class="nav-item my-1">
+                            <li class="nav-item my-2 my-xl-1">
                                 <a href="{{ path('homepage') }}" class="nav-link {{ currentPath == 'homepage' ? 'active' }}">Strona Głowna</a>
                             </li>
-                            <li class="nav-item my-1">
+                            <li class="nav-item my-2 my-xl-1">
                                 <a href="{{ path('category') }}" class="nav-link {{ currentPath == 'category' or currentPath == 'products-by-category' ? 'active' }}">Kategorie</a>
                             </li>
-                            <li class="nav-item my-1">
+                            <li class="nav-item my-2 my-xl-1">
                                 <a href="{{ path('calibration') }}" class="nav-link {{ currentPath == 'calibration' ? 'active' }}">Kalibracja</a>
                             </li>
                         </ul>
@@ -40,10 +40,10 @@
                             <label for="videoContainerSwitch">&nbsp;Pokaż podgląd kamery</label>
                         </div>
                         <form class="row g-2 align-items-center my-2" method="get" action="{{ path('search') }}">
-                            <div class="col-auto">
+                            <div class="col-auto my-auto">
                                 <input class="form-control" type="search" name="value" placeholder="Szukaj" aria-label="Szukaj">
                             </div>
-                            <div class="col-auto">
+                            <div class="col-auto my-auto">
                                 <button type="submit">
                                     <i class="bi bi-search"></i>
                                 </button>
