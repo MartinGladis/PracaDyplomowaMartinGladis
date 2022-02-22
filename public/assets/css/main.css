@@ -1,8 +1,9 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css");
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro');
 
 body {
-    font-family: "EB Garamond", sans-serif;
+    font-family: "EB Garamond", "Crimson Pro", sans-serif;
 }
 
 body > header,
@@ -54,8 +55,11 @@ div.category div.category-image {
 div.product p.name,
 div.category p.name {
     display: block;
-    height: 3em;
     overflow: hidden;
+}
+
+div.product p.name {
+    height: 3em;
 }
 
 div.product p.price {
