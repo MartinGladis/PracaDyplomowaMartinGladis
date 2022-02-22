@@ -55,6 +55,7 @@ div.product p.name,
 div.category p.name {
     display: block;
     height: 3em;
+    overflow: hidden;
 }
 
 div.product p.price {
